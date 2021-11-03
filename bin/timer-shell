@@ -6,7 +6,7 @@ const hour = parseInt(process.argv[2]);
 const minute = parseInt(process.argv[3]);
 
 const cmd = process.argv.slice(4).reduce((prevValue, currentValue) => {
-  return prevValue + currentValue + " ";
+  return prevValue + " " + currentValue;
 });
 
 setInterval(() => {
