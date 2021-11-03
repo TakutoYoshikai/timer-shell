@@ -12,7 +12,7 @@ const cmd = process.argv.slice(4).reduce((prevValue, currentValue) => {
 setInterval(() => {
   const now = new Date();
   if (now.getHours() === hour && now.getMinutes() === minute) {
-    execSync(cmd);
+    console.log(execSync(cmd).toString());
     process.exit();
   }
 }, 1000);
