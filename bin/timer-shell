@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+const execSync = require("child_process").execSync;
+
+const hour = parseInt(process.argv[2]);
+const minute = parseInt(process.argv[3]);
+
+const cmd = process.argv.slice(4).reduce((prevValue, currentValue) => {
+  return prevValue + currentValue + " ";
+});
+
+setInterval(() => {
+  const now = new Date();
+  if (now.getHours() === hour && now.getMinutes() === minute) {
+    execSync(cmd);
+    process.exit();
+  }
+}, 1000);
